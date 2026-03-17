@@ -1,0 +1,27 @@
+---
+driver:
+  name: vagrant
+  cache_directory: false # Prevent chef-client checksum errors caused by omnibus caching for multiple OS
+
+provisioner:
+  name: chef_infra
+  product_name: chef
+  product_version: 18
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: almalinux-9
+  - name: rockylinux-9
+  - name: ubuntu-24.04
+  - name: debian-12
+
+suites:
+  - name: default
+    run_list:
+      - recipe[nexus::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:

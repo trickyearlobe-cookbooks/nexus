@@ -1,0 +1,5 @@
+# Managed by Chef — do not edit manually
+# run_as_user is intentionally left empty because systemd User= handles
+# the user switch. Setting a value here causes the nexus script to attempt
+# su/sudo which conflicts with the systemd execution model.
+run_as_user=""

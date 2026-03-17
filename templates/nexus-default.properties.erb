@@ -1,0 +1,14 @@
+## DO NOT EDIT - Managed by Chef
+##
+## Nexus Repository Manager default properties
+
+# Jetty section
+application-port=<%= @port %>
+application-host=<%= @host %>
+nexus-args=${jetty.etc}/jetty.xml,${jetty.etc}/jetty-http.xml,${jetty.etc}/jetty-requestlog.xml
+nexus-context-path=<%= @context_path %>
+
+# Nexus section
+nexus-edition=nexus-oss-edition
+nexus-features=\
+ nexus-oss-feature
